@@ -1,0 +1,18 @@
+<div class="columns is-centered mt-6">
+  <div class="column is-half">
+    <% @goals.each do |day, goals| %>
+      <h3 class="is-size-4 has-text-weight-bold mb-4 mt-4 has-text-centered">Goals for <%= day%></h3>
+      
+      <% goals.each do |goal| %>
+        <%= link_to goal_path(goal) do %>
+          <div class="card">
+            <div class="card-content">
+              <strong><%= goal.title %></strong><br/>
+              <%= goal.body %>,
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
